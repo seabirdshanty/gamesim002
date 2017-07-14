@@ -1,0 +1,212 @@
+<html>
+	<head>
+		<title>	</title>
+		<link rel="stylesheet" type="text/css" href="win98.css">
+		<link rel="stylesheet" type="text/css" href="animate.css">
+		<style>
+		
+			@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+			
+			@keyframes animatedBackground {
+				from { background-position: 0 0; }
+				to { background-position: -100% 100%; }
+			}
+			
+			@keyframes flipper {
+				from {
+					-webkit-transform: scaleX(0);
+					-moz-transform: scaleX(0);
+					-o-transform: scaleX(0);
+					transform: scaleX(0);
+
+					filter: none;
+					-ms-filter: 'none';
+				}
+				
+				25% { 
+
+				-webkit-transform: scaleX(-1);
+				-moz-transform: scaleX(-1);
+				-o-transform: scaleX(-1);
+				transform: scaleX(-1);
+
+				filter: FlipH;
+				-ms-filter: 'FlipH';
+
+				}
+				
+				50%, to {
+				
+					-webkit-transform: scaleX(0);
+					-moz-transform: scaleX(0);
+					-o-transform: scaleX(0);
+					transform: scaleX(0);
+
+					filter: FlipH;
+					-ms-filter: 'FlipH';
+				
+				}
+				
+				75% {
+					-webkit-transform: scaleX(1);
+					-moz-transform: scaleX(1);
+					-o-transform: scaleX(1);
+					transform: scaleX(1);
+
+					filter: none;
+					-ms-filter: 'none';
+				}
+			}
+			
+			
+			body, html {
+				margin: 0;
+				padding: 0;
+				background: black;
+				height: 100%;
+				width: 100%;
+			}
+			
+			
+			.centered {
+				position: absolute;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+			
+			
+			#game {
+				/* width: 544px; */
+				max-width: 544px;
+				height: 374px;
+				background-image: url('bg06.gif');
+				background-attachment: fixed;
+				animation: animatedBackground 40s linear infinite;
+				position: relative;
+			}
+			
+			
+			#game #message {
+				background: linear-gradient(pink, salmon);
+				
+				width: 90%;
+				height: 60px;
+				
+				border: 5px groove gray;
+				border-radius: 5px;
+				
+				padding: 10px;
+				margin: 0px 8px;
+				
+				font-family: 'Press Start 2P', cursive;
+				font-size: 8px;
+				letter-spacing: 0.5em;
+				
+				position: absolute;
+				bottom: 24px;
+				z-index: 20;
+				
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+			}
+			
+			#game #message p { 
+				margin-top: 10px;
+				text-shadow: 2px 2px #ff0000;
+				line-height: 10px;
+			}
+			
+			#game #message h3 {
+				padding: 3px 10px;
+				margin: 10px;
+				display: inline;
+				font-size: 8px;
+				background-color: white; 
+				border-radius: 2px 0;
+				box-shadow: 2px 2px #ff0000;
+			}
+			
+			#game #fore { 
+				position: absolute;
+				z-index: 10; 
+				width: 100%;
+				height: 150px;
+				/* background: green; */
+			}
+			
+			.icon { 
+				position: absolute; 
+				bottom: 0;
+			}
+			
+			.flip { 
+				-moz-transform: scaleX(-1);
+				-o-transform: scaleX(-1);
+				-webkit-transform: scaleX(-1);
+				transform: scaleX(-1);
+				filter: FlipH;
+				-ms-filter: "FlipH";
+			}
+			
+			.l1 { left: 5%; z-index: 3; }
+			.l2 { left: 20%; z-index: 2; }
+			.l3 { left: 35%; z-index: 1; }
+			
+			.r1 { right: 5%; z-index: 3; }
+			.r2 { right: 20%; z-index: 2;  }
+			.r3 { right: 35%; z-index: 1; }
+			
+			.spin {
+				animation: flipper 3s linear infinite;
+			}
+			
+			
+			#game #back { 
+				background: url("bg01.gif") center no-repeat;
+				background-size: 100%;
+				width: 80%;
+				height: 300px;
+				border: 5px inset white;
+				box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+			}
+			
+			
+
+		</style>
+	</head>
+	<body>
+			<div class="centered window text">
+				<div class="top">
+				</div>
+				<div class="middle">
+				<div class="content">
+					<div id="game">
+						<div id="back" class="centered"> 
+							<img src="./spr/cardvenus.png" class="centered spin">
+						</div>
+						<div id="fore" class="centered">
+								<img src="./spr/charavenus.png" class="icon l1 animated infinite pulse">
+								<img src="./spr/gameovermoon.png" class="icon flip l2">
+								<img src="./spr/gameoverjupiter.png" class="icon flip r1">
+								<img src="./spr/gameovermars.png" class="icon flip r2">
+								<img src="./spr/gameovermercury.png" class="icon flip r3">
+						</div>
+						
+							<div id="message">
+							<h3>Sailor Venus </h3>
+							<p>
+								 Fighting evil by moonlight,<br />
+								 Winning love by daylight,<br />
+								 Never Running from a real fight<br />
+								 I'm Number one, Sailor Venus!
+							</p>
+						</div>
+					</div>
+				</div>
+				</div>
+				<div class="bottom"></div>
+			</div>
+	</body>
+</html>
