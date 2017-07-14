@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<title>	</title>
+		<style>
+		
+			@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+			
+			@keyframes animatedBackground {
+				from { background-position: 0 0; }
+				to { background-position: -100% 100%; }
+			}
+			
+			
+			body {
+				margin: 0;
+				padding: 0;
+				background: black;
+				height: 100%;
+				width: 100%;
+			}
+			
+			/*
+			.centered {
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				position: absolute;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+			*/
+			
+			#game {
+				width: 544px;
+				height: 374px;
+				margin: 0 auto;
+				background-image: url('mn08.gif');
+				background-attachment: fixed;
+				animation: animatedBackground 80s linear infinite;
+				border: 20px solid white;
+				position: relative;
+			}
+			
+			
+			#game #message {
+				background: linear-gradient(pink, salmon);
+				
+				width: 500px;
+				height: 50px;
+				
+				border: 5px groove gray;
+				border-radius: 5px;
+				
+				padding: 10px;
+				margin: 0px 8px;
+				
+				font-family: 'Press Start 2P', cursive;
+				font-size: 8px;
+				letter-spacing: 0.5em;
+				
+				position: absolute;
+				bottom: 20px;
+				z-index: 20;
+			}
+			
+			#game #message p { 
+				text-shadow: 2px 2px #ff0000;
+				line-height: 10px;
+			}
+			
+			#game #message h3 {
+				padding: 3px 10px;
+				display: inline;
+				font-size: 8px;
+				background-color: white; 
+				border-radius: 2px 0;
+				box-shadow: 2px 2px #ff0000;
+			}
+			
+			#game #fore { 
+				position: absolute;
+				z-index: 10; 
+				width: 100%;
+			}
+			#game #fore .p1 { float: left; }
+			#game #fore .p2 { float: right; }
+			
+			#game #back { 
+				background: url("bg01.gif") center no-repeat;
+				background-size: 100%;
+				position: absolute;
+				width: 414px;
+				height: 300px;
+				border: 5px solid white;
+				border-radius: 5px;
+				top: 25%;
+				left: 20%;
+				margin-top: -50px;
+				margin-left: -50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="centered">
+			<div id="game">
+				
+				<div id="back"> 
+				</div>
+				
+				<div id="fore">
+						<img src="ven.gif" class="p1">
+						<img src="mer.gif" class="p2">
+				</div>
+				
+					<div id="message">
+					<h3>Sailor Venus:</h3>
+					<p>
+						 Fighting evil by moonlight,<br />
+						 Winning love by daylight,<br />
+						 Never Running from a real fight<br />
+						 I'm Number one, Sailor Venus! Haha!
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
