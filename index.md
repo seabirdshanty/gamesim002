@@ -1,4 +1,4 @@
-
+### <3
 
 # Sailor Moon HTML Game Sim ![moon](moon03.gif)
 cause why the hell not. to soon use jquery
